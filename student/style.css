@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body {
+  background-color: #f1f6fa;
+}
+
+/* homepage student */
+.container {
+  font-family: 'Poppins', sans-serif;
+  margin: 100px 50px;
+}
+
+.container img {
+  width: 50%;
+  float: left;
+  margin-right: 20px;
+}
+
+.container .teacher {
+  width: 15%;
+  float: left;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.container p {
+  text-align: justify;
+}
+
+nav {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 3%;
+  height: 50px;
+  background-color: #FF0000;
+}
+
+nav .logo {
+  float: left;  
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+nav .logo img{
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
+}
+
+nav .links {
+  float: right;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav .links li {
+  list-style: none;
+}
+
+nav .links .user-pic{
+  display: flex;
+  width: 30px;
+}
+
+nav .links a {
+  position: relative;
+  display: block;
+  padding: 0px 15px 0px 15px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+li a:hover {
+  position: relative;
+  width: 90%;
+  border-bottom: 2px solid #9c1d24;
+  bottom: 0;
+  left: 0;
+}
+
+
+nav .links a.active{
+  position: relative;
+  width: 90%;
+  border-bottom: 2px solid #9c1d24;
+  bottom: 0;
+  left: 0;
+}
+
+#nav-toggle {
+  position: absolute;
+  top: -100px;
+}
+
+.column {
+  flex: 33.33%;
+  height: 200px;
+  text-align: center;
+}
+
+.column img {
+  width: 30px;
+}
+
+/*dashboard*/
+
+.dash .column {
+  flex: 20%;
+  height: 150px;
+  text-align: left;
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 30px;
+  background-color: #3e65da;
+  color: white;
+}
+
+.dash-col img {
+  display: flex;
+  width: 120px;
+}
+
+
+/* Subjects */
+
+.cards-wrapper {
+  display: grid;
+  column-gap: 16px;   
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.cards-wrapper .card-content-wrapper {
+  border-radius: 4px;
+  border: 2px solid #f3f0f0;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 16px;
+}
+
+.cards-wrapper .card-content-wrapper .card-header-content { 
+  background-color: #9c1d24; 
+  width: 100%;
+  padding: 8px 20px;
+  color: white;
+}
+
+.cards-wrapper .card-content-wrapper .card-body-content {
+  padding: 16px;
+}
+
+/*Profile*/
+
+.profile .column {
+  flex: 20%;
+  height: 150px;
+  text-align: left;
+  margin: 20px;
+  border-radius: 4px;
+  border: 2px solid #f3f0f0;
+  padding: 30px;
+  background-color: #9c1d24;
+  color: white;
+}
+
+.profile .column-1 {
+  flex: 50%;
+  height: 150px;
+  text-align: left;
+  margin: 20px;
+  border-radius: 4px;
+  border: 2px solid #f3f0f0;
+  padding: 30px;
+  background-color: #9c1d24;
+  color: white;
+}
+
+.profile .column-1 .profile-col {
+  float: left;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.column-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 990px) {
+  .cards-wrapper {  
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .logo {
+    float: none;
+    width: auto;
+    justify-content: center;
+  }
+
+  nav .links {
+    float: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(0,0,0,.8);
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all .5s ease-in-out;
+  }
+
+  nav .links a {
+    font-size: 20px;
+  }
+
+  nav :checked ~ .links {
+    bottom: 0;
+  }
+  nav :checked ~ .icon-burger .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+
+  nav :checked ~ .icon-burger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+
+  nav :checked ~ .icon-burger .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .column {
+    flex: 100%;
+  }
+
+  .container .teacher {
+    width: 30%;
+  }
+
+  .cards-wrapper {  
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .cards-wrapper {  
+    grid-template-columns: 1fr;
+  }
+}
+
+
